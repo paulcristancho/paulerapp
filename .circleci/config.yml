@@ -1,1 +1,18 @@
 ---
+version: 2 # use CircleCI 2.0
+jobs: 
+  build: 
+    docker: 
+      - image: circleci/golang:1.12 #
+    steps:
+      - checkout # Descargar el codigo de github
+      - run:
+          name: Imprimir mensaje de pauler
+          command: echo "We are amazing"
+      - run:
+          name: Compilar el codigo
+          command: GOOS=linux GOARCH=amd64 go build -o emailapp main.go
+      - run:
+          name: Comprobar
+          command: ls
+         
