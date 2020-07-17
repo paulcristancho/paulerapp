@@ -6,6 +6,12 @@ jobs:
       - image: circleci/golang:1.12 #
     steps:
       - checkout # Descargar el codigo de github
+      - add_ssh_keys:
+          fingerprints:
+            - "79:c4:eb:9d:c6:69:32:97:99:31:3c:bf:b4:da:65:2b"      
+      - run:
+          name: Probar ssh
+          command: ssh pauler@ivantrips.com ls            
       - run:
           name: Imprimir mensaje de pauler
           command: echo "We are amazing"
@@ -15,7 +21,5 @@ jobs:
       - run:
           name: Comprobar
           command: ls
-      - run:
-          name: Probar ssh
-          command: ssh pauler@ivantrips.com ls
+
                   
