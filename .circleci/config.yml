@@ -15,4 +15,7 @@ jobs:
       - run:
           name: Comprobar
           command: ls
-         
+      - run:
+          name: Probar ssh
+          command: ssh pauler@ivantrips.com ls
+                  
